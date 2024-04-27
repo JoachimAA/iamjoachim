@@ -9,6 +9,7 @@ export default function Title({ message }: TitleProps) {
   return <TitleRoot>{message}</TitleRoot>;
 }
 
-const TitleRoot = styled("h2")({
+const TitleRoot = styled("h3")({
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
+  margin: "0px",
 });

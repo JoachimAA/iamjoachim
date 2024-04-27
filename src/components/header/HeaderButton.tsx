@@ -25,14 +25,19 @@ interface ContainerProps {
 
 const Container = styled("div")<{ selected: boolean }>`
   ${(props) => `
-    background-color: ${props.selected ? "white" : "transparent"};
+    background-color: ${
+      props.selected ? "var(--secondary-color)" : "transparent"
+    };
     border-radius: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30px;
-    padding: 6px;
-    color: ${props.selected ? "orange" : "white"};
+    padding: 4px;
+    cursor: pointer;
+    color: ${
+      props.selected ? "var(--primary-color)" : "var(--secondary-color)"
+    };
   `}
 `;
 

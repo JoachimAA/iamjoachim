@@ -6,7 +6,7 @@ export default function Footer() {
 }
 
 const Root = styled("div")({
-  backgroundColor: "orange",
+  backgroundColor: "var(--primary-color)",
   width: "100vw",
   height: "80px",
 });

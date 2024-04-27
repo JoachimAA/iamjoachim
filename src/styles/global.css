@@ -1,0 +1,10 @@
+:root {
+  --primary-color: #009bd6;
+  --secondary-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
