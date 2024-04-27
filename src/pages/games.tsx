@@ -1,7 +1,17 @@
 import React from "react";
-import PageLayout from "../components/PageLayout";
-import Title from "../components/typography/Title";
+import PegSolitaire from "../components/games/peg-solitaire/PegSolitaire";
+import styled from "styled-components";
 
 export default function Games() {
-  return <div>game goes here</div>;
+  return (
+    <ContentContainer>
+      <PegSolitaire />
+    </ContentContainer>
+  );
 }
+
+const ContentContainer = styled("div")({
+  display: "flex",
+  justifyContent: "center",
+  marginTop: "24px",
+});
