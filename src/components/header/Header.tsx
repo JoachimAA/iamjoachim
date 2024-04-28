@@ -34,7 +34,7 @@ const HeaderButtonsContainer = styled("div")({
 
 const Root = styled("div")({
   width: "100vw",
-  height: "80px",
+  height: "70px",
   backgroundColor: "var(--primary-color)",
   display: "grid",
   gridTemplateColumns: "100px auto 100px",

@@ -8,5 +8,5 @@ export default function Footer() {
 const Root = styled("div")({
   backgroundColor: "var(--primary-color)",
   width: "100vw",
-  height: "80px",
+  height: "70px",
 });
