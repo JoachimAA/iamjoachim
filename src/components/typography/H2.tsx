@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-interface TitleProps {
+interface H2Props {
   message: string;
 }
 
-export default function Title({ message }: TitleProps) {
-  return <TitleRoot>{message}</TitleRoot>;
+export default function H2({ message }: H2Props) {
+  return <H2Root>{message}</H2Root>;
 }
 
-const TitleRoot = styled("h3")({
+const H2Root = styled("h2")({
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
   margin: "0px",
 });

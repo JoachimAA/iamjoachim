@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Title from "../typography/Title";
+import H3 from "../typography/H3";
 import { navigate } from "gatsby";
 
 interface HeaderButtonProps {
@@ -14,13 +14,9 @@ export default function HeaderButton({ message, path }: HeaderButtonProps) {
       selected={window.location.href.includes(path)}
       onClick={() => navigate(path)}
     >
-      <Title message={message} />
+      <H3 message={message} />
     </Container>
   );
-}
-
-interface ContainerProps {
-  selected: boolean;
 }
 
 const Container = styled("div")<{ selected: boolean }>`

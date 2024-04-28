@@ -28,4 +28,5 @@ const Layout = styled("div")({
 
 const ContentContainer = styled("div")({
   flexGrow: "1",
+  padding: "24px 16px",
 });
