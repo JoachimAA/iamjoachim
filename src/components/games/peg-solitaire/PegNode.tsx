@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-interface PegNodeProps {
+interface NodeProps {
   selected: boolean;
   empty: boolean;
 }
 
-export default function PegNode({ selected, empty }: PegNodeProps) {
+export default function PegNode({ selected, empty }: NodeProps) {
   return <NodeContainer selected={selected} empty={empty} />;
 }
 
