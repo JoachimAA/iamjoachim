@@ -12,7 +12,7 @@ export default function Header() {
       </HomeButton>
       <HeaderButtonsContainer>
         <HeaderButton message="Games" path="/games" />
-        <HeaderButton message="Geocaching" path="/geocaching" />
+        <HeaderButton message="Energy" path="/energy" />
       </HeaderButtonsContainer>
     </Root>
   );
