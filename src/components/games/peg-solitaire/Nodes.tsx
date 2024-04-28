@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getColumn, getRow } from "./peg-solitaire-utils";
 import PegNode from "./PegNode";
@@ -75,17 +75,91 @@ export default function Nodes() {
     if (nodeEmpty) {
       const clickedNode = nodes[idx];
       const jumpNode = getJumpNode(clickedNode);
-      console.log(jumpNode && nodes.find((node) => node.idx === jumpNode.idx));
       if (jumpNode && !nodes.find((node) => node.idx === jumpNode.idx)?.empty) {
         updateNodes(clickedNode, jumpNode);
         setSelectedNode(clickedNode);
+        if (!checkForPossibleMoves()) {
+          console.log("game over");
+        }
       }
     } else {
       setSelectedNode(nodes[idx]);
     }
   };
 
-  const checkForPossibleMoves = () => {};
+  useEffect(() => {
+    if (!checkForPossibleMoves()) {
+      const occupiedNodes = nodes.filter((node) => !node.empty);
+      if (
+        occupiedNodes.length === 1 &&
+        occupiedNodes[0].column === 4 &&
+        occupiedNodes[0].row === 4
+      ) {
+        console.log("you win");
+      } else {
+        console.log("you lose");
+      }
+    }
+  }, [nodes]);
+
+  const checkForPossibleMoves = () => {
+    const occupiedNodes = nodes.filter((node) => !node.empty);
+
+    for (const occupiedNode of occupiedNodes) {
+      const possibleMoves = [
+        {
+          adjacent: { row: occupiedNode.row - 1, column: occupiedNode.column },
+          jumpTo: { row: occupiedNode.row - 2, column: occupiedNode.column },
+        },
+        {
+          adjacent: { row: occupiedNode.row + 1, column: occupiedNode.column },
+          jumpTo: { row: occupiedNode.row + 2, column: occupiedNode.column },
+        },
+        {
+          adjacent: { row: occupiedNode.row, column: occupiedNode.column - 1 },
+          jumpTo: { row: occupiedNode.row, column: occupiedNode.column - 2 },
+        },
+        {
+          adjacent: { row: occupiedNode.row, column: occupiedNode.column + 1 },
+          jumpTo: { row: occupiedNode.row, column: occupiedNode.column + 2 },
+        },
+      ];
+
+      for (const possibleMove of possibleMoves) {
+        const isAdjacentOccupied = nodes.some(
+          (node) =>
+            node.row === possibleMove.adjacent.row &&
+            node.column === possibleMove.adjacent.column &&
+            !node.empty
+        );
+
+        const isJumpToAvailable = nodes.some(
+          (node) =>
+            node.row === possibleMove.jumpTo.row &&
+            node.column === possibleMove.jumpTo.column &&
+            node.empty
+        );
+
+        if (isAdjacentOccupied && isJumpToAvailable) {
+          console.log("Found adjacent node with a jump available");
+          console.log(
+            "possible move c " +
+              occupiedNode.column +
+              " r " +
+              occupiedNode.row +
+              " -> c " +
+              possibleMove.jumpTo.column +
+              " r " +
+              possibleMove.jumpTo.row
+          );
+          return true;
+        }
+      }
+    }
+
+    console.log("No moves left");
+    return false;
+  };
 
   return (
     <>
