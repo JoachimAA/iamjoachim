@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <>
       <H2 message="I am Joachim Arthey" />
-      <Body message="I am a software devloper based in Northamptonshire. Here you can find some of my personal project that I have worked in my spare time." />
+      <Body message="I am a software devloper based in Northamptonshire. Here you can find some of my personal project that I have worked on in my spare time." />
     </>
   );
 }

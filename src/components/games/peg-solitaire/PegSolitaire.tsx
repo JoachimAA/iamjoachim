@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import PegNode from "./PegNode";
-import { getColumn, getRow } from "./peg-solitaire-utils";
 import Background from "./Background";
 import Nodes from "./Nodes";
 import Instructions from "./Instructions";

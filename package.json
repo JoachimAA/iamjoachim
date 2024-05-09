@@ -18,6 +18,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.17",
     "axios": "^1.6.8",
     "babel-plugin-styled-components": "^2.1.4",
     "chart.js": "^4.4.2",

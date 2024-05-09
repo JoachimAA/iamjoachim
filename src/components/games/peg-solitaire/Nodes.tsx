@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getColumn, getRow } from "./peg-solitaire-utils";
 import PegNode from "./PegNode";
+import { Dialog } from "@mui/material";
+import H3 from "../../typography/H3";
+import Button from "../../Button";
+import Body from "../../typography/Body";
 
 const NUMBER_OF_GAME_BOARD_NODES = 33;
 
@@ -14,14 +18,18 @@ interface Node {
 
 export default function Nodes() {
   const [selectedNode, setSelectedNode] = useState<Node | null>(null);
+  const [winDialogOpen, setWinDialogOpen] = useState(false);
+  const [loseDialogOpen, setLoseDialogOpen] = useState(false);
 
-  const [nodes, setNodes] = useState<Node[]>(
-    Array.from({ length: NUMBER_OF_GAME_BOARD_NODES }).map((value, idx) => {
-      const column = getColumn(idx);
-      const row = getRow(idx, column);
-      return { idx, column, row, empty: idx === 16 ? true : false };
-    })
-  );
+  const nodesStartState = Array.from({
+    length: NUMBER_OF_GAME_BOARD_NODES,
+  }).map((value, idx) => {
+    const column = getColumn(idx);
+    const row = getRow(idx, column);
+    return { idx, column, row, empty: idx === 16 ? true : false };
+  });
+
+  const [nodes, setNodes] = useState<Node[]>(nodesStartState);
 
   const updateNodes = (clickedNode: Node, jumpNode: Node) => {
     setNodes((currentNodes) => {
@@ -95,9 +103,9 @@ export default function Nodes() {
         occupiedNodes[0].column === 4 &&
         occupiedNodes[0].row === 4
       ) {
-        console.log("you win");
+        setWinDialogOpen(true);
       } else {
-        console.log("you lose");
+        setLoseDialogOpen(true);
       }
     }
   }, [nodes]);
@@ -141,23 +149,11 @@ export default function Nodes() {
         );
 
         if (isAdjacentOccupied && isJumpToAvailable) {
-          console.log("Found adjacent node with a jump available");
-          console.log(
-            "possible move c " +
-              occupiedNode.column +
-              " r " +
-              occupiedNode.row +
-              " -> c " +
-              possibleMove.jumpTo.column +
-              " r " +
-              possibleMove.jumpTo.row
-          );
           return true;
         }
       }
     }
 
-    console.log("No moves left");
     return false;
   };
 
@@ -177,9 +173,53 @@ export default function Nodes() {
           </NodeContainer>
         );
       })}
+      <Dialog open={winDialogOpen}>
+        <DialogContent>
+          <H3 message="🏆 You Win! 🏆" />
+          <DialogButton
+            onClick={() => {
+              setSelectedNode(null);
+              setNodes(nodesStartState);
+              setWinDialogOpen(false);
+            }}
+          >
+            <Body message="Play again" />
+          </DialogButton>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={loseDialogOpen}>
+        <DialogContent>
+          <H3 message="Better luck next time" />
+          <DialogButton
+            onClick={() => {
+              setSelectedNode(null);
+              setNodes(nodesStartState);
+              setLoseDialogOpen(false);
+            }}
+          >
+            <Body message="Play again" />
+          </DialogButton>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
+
+const DialogContent = styled("div")({
+  padding: "24px",
+  display: "grid",
+  gap: "24px",
+  justifyItems: "center",
+});
+
+const DialogButton = styled("div")({
+  backgroundColor: "var(--primary-color)",
+  borderRadius: "40px",
+  color: "var(--secondary-color)",
+  padding: "10px",
+  width: "max-content",
+  cursor: "pointer",
+});
 
 const NodeContainer = styled("div")({
   justifySelf: "center",
