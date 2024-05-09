@@ -1,9 +1,9 @@
 import React from "react";
-import PegSolitaire from "../components/games/peg-solitaire/PegSolitaire";
+import PegSolitaire from "../../components/games/peg-solitaire/PegSolitaire";
 import styled from "styled-components";
-import H2 from "../components/typography/H2";
+import H2 from "../../components/typography/H2";
 
-export default function Games() {
+export default function PegSolitairePage() {
   return (
     <ContentContainer>
       <H2 message="Peg solitaire" />
