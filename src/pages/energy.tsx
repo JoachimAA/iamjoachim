@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
-import PageLayout from "../components/PageLayout";
-import Title from "../components/typography/H3";
+import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { graphql } from "gatsby";
 import { Generation } from "../../gatsby-node";
 import { format } from "date-fns";
 import Body from "../components/typography/Body";
+import H3 from "../components/typography/H3";
+import styled from "styled-components";
+import { firstLetterUppercase } from "../utils/energy/energy-utils";
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const query = graphql`
@@ -33,17 +35,14 @@ interface EnergyProps {
 }
 
 export default function Energy({ data }: EnergyProps) {
-  console.log("energy data -> ", data.allEnergyGeneration.nodes[0]);
   const energyData = data.allEnergyGeneration.nodes[0];
 
-  console.log(energyData.generationmix.map((mix) => mix.fuel));
-  console.log(energyData.generationmix.map((mix) => mix.perc));
-
   const doughnutData = {
-    labels: energyData.generationmix.map((mix) => mix.fuel),
+    labels: energyData.generationmix.map((mix) =>
+      firstLetterUppercase(mix.fuel)
+    ),
     datasets: [
       {
-        label: "My First Dataset",
         data: energyData.generationmix.map((mix) => mix.perc),
         backgroundColor: [
           "rgb(0, 153, 76)",
@@ -61,18 +60,31 @@ export default function Energy({ data }: EnergyProps) {
     ],
   };
 
-  const formatDate = (date: string) => {
-    return format(new Date(date), "H:m d/M/y");
+  const formatDay = (date: string) => {
+    return format(new Date(date), "d/M/y");
+  };
+
+  const formatHoursMins = (date: string) => {
+    return format(new Date(date), "h:mmaaa");
   };
 
   return (
-    <div>
+    <EnergyContainer>
+      <H3 message="UK National Grid Generation Mix" />
+      <Body message="This chart show the current mix of fuel types being used to generate electricity for the National Grid. The data comes from the Carbon Intensity API." />
       <Body
-        message={`Stats as of ${formatDate(energyData.from)} - ${formatDate(
+        message={`Current stats as of ${formatDay(
+          energyData.from
+        )} ${formatHoursMins(energyData.from)} - ${formatHoursMins(
           energyData.to
         )}`}
       />
       <Doughnut data={doughnutData} />
-    </div>
+    </EnergyContainer>
   );
 }
+
+const EnergyContainer = styled("div")({
+  display: "grid",
+  gap: "24px",
+});
