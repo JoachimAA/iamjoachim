@@ -15,8 +15,8 @@ const NodeContainer = styled("div")<{ selected: boolean; empty: boolean }>`
   outline: ${props.selected ? "2px solid black" : "none"};
   border: 2px solid #E5E4E2;
   border-radius: 100px;
-  height: 40px;
-  width: 40px;
+  height: calc(100% - 35%);
+  width: calc(100% - 35%);
   background-color: ${props.empty ? "#C0C0C0" : "var(--primary-color)"};
   `}
 `;

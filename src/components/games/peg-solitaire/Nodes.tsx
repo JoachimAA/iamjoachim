@@ -166,6 +166,11 @@ export default function Nodes() {
             style={{
               gridColumn: node.column,
               gridRow: node.row,
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
             onClick={() => onClickNode(idx, node.empty)}
           >

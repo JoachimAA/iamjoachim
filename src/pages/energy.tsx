@@ -69,18 +69,24 @@ export default function Energy({ data }: EnergyProps) {
   };
 
   return (
-    <EnergyContainer>
-      <H3 message="UK National Grid Generation Mix" />
-      <Body message="This chart show the current mix of fuel types being used to generate electricity for the National Grid. The data comes from the Carbon Intensity API." />
-      <Body
-        message={`Current stats as of ${formatDay(
-          energyData.from
-        )} ${formatHoursMins(energyData.from)} - ${formatHoursMins(
-          energyData.to
-        )}`}
-      />
-      <Doughnut data={doughnutData} />
-    </EnergyContainer>
+    <>
+      {energyData ? (
+        <EnergyContainer>
+          <H3 message="UK National Grid Generation Mix" />
+          <Body message="This chart show the current mix of fuel types being used to generate electricity for the National Grid. The data comes from the Carbon Intensity API." />
+          <Body
+            message={`Current stats as of ${formatDay(
+              energyData.from
+            )} ${formatHoursMins(energyData.from)} - ${formatHoursMins(
+              energyData.to
+            )}`}
+          />
+          <Doughnut data={doughnutData} />
+        </EnergyContainer>
+      ) : (
+        <Body message="No data to show" />
+      )}
+    </>
   );
 }
 

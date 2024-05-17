@@ -25,6 +25,8 @@ const Root = styled("div")({
 
 const GameBoard = styled("div")({
   display: "grid",
-  gridTemplateColumns: "repeat(7, 60px)",
-  gridTemplateRows: "repeat(7, 60px)",
+  gridTemplateColumns: "repeat(7, calc(100% / 7))",
+  gridTemplateRows: "repeat(7, calc(100% / 7))",
+  width: "100%",
+  aspectRatio: "1 / 1",
 });
