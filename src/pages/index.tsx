@@ -2,6 +2,7 @@ import * as React from "react";
 import PageLayout from "../components/PageLayout";
 import H2 from "../components/typography/H2";
 import Body from "../components/typography/Body";
+import { HeadFC } from "gatsby"
 
 export default function HomePage() {
   return (
@@ -11,3 +12,5 @@ export default function HomePage() {
     </>
   );
 }
+
+export const Head: HeadFC = () => <title>I am Joachim Arthey</title>

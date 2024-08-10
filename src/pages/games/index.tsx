@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { navigate } from "gatsby";
+import { navigate, HeadFC } from "gatsby";
 import H2 from "../../components/typography/H2";
 
 export default function GamesPage() {
@@ -12,6 +12,8 @@ export default function GamesPage() {
     </ContentContainer>
   );
 }
+
+export const Head: HeadFC = () => <title>Games - Joachim Arthey</title>
 
 const ContentContainer = styled("div")({
   display: "flex",

@@ -1,7 +1,7 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { graphql } from "gatsby";
+import { graphql, HeadFC } from "gatsby";
 import { Generation } from "../../gatsby-node";
 import { format } from "date-fns";
 import Body from "../components/typography/Body";
@@ -89,6 +89,8 @@ export default function Energy({ data }: EnergyProps) {
     </>
   );
 }
+
+export const Head: HeadFC = () => <title>Energy - Joachim Arthey</title>
 
 const EnergyContainer = styled("div")({
   display: "grid",
