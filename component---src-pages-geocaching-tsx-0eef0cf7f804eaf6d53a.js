@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkiamjoachim=self.webpackChunkiamjoachim||[]).push([[858],{1219:function(e,n,c){c.r(n),c.d(n,{default:function(){return a}});var u=c(7294);function a(){return u.createElement("div",null,"geocaching")}}}]);
-//# sourceMappingURL=component---src-pages-geocaching-tsx-0eef0cf7f804eaf6d53a.js.map
