@@ -6,14 +6,21 @@ import H2 from "../../components/typography/H2";
 export default function GamesPage() {
   return (
     <ContentContainer>
-      <div onClick={() => navigate("/games/peg-solitaire")}>
+      <LinkButton onClick={() => navigate("/games/peg-solitaire")}>
         <H2 message="Peg solitaire" />
-      </div>
+      </LinkButton>
     </ContentContainer>
   );
 }
 
 export const Head: HeadFC = () => <title>Games - Joachim Arthey</title>
+
+const LinkButton = styled("div")({
+  cursor: "pointer",
+  "&:hover": {
+    textDecoration: "underline",
+  }
+})
 
 const ContentContainer = styled("div")({
   display: "flex",
