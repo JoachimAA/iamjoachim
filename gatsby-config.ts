@@ -10,7 +10,14 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   pathPrefix: "/",
-  plugins: ["gatsby-plugin-styled-components"],
+  plugins: [
+    "gatsby-plugin-styled-components", 
+    {
+    resolve: 'gatsby-plugin-manifest',
+      options: {
+        "icon": "src/images/favicon.png"
+      }
+  }],
 };
 
 export default config;
