@@ -12,7 +12,8 @@ export default function Header() {
       </HomeButton>
       <HeaderButtonsContainer>
         <HeaderButton message="Games" path="/games" />
-        <HeaderButton message="Energy" path="/energy" />
+        {/* <HeaderButton message="Energy" path="/energy" /> */}
+        <HeaderButton message="Maps" path="/maps" />
       </HeaderButtonsContainer>
     </Root>
   );
