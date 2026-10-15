@@ -3,24 +3,15 @@ import styled from "styled-components";
 import { navigate, HeadFC } from "gatsby";
 import H2 from "../../components/typography/H2";
 
-export default function GamesPage() {
+export default function ModelRailwayPage() {
   return (
     <ContentContainer>
-      <LinkButton onClick={() => navigate("/games/peg-solitaire")}>
-        <H2 message="Peg solitaire" />
-      </LinkButton>
+      <H2 message="Model railway" />
     </ContentContainer>
   );
 }
 
-export const Head: HeadFC = () => <title>Games - Joachim Arthey</title>
-
-const LinkButton = styled("div")({
-  cursor: "pointer",
-  "&:hover": {
-    textDecoration: "underline",
-  }
-})
+export const Head: HeadFC = () => <title>Model railway - Joachim Arthey</title>;
 
 const ContentContainer = styled("div")({
   display: "flex",
