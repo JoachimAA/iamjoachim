@@ -1,7 +1,7 @@
-import React from "react";
 import Header from "./header/Header";
 import Footer from "./Footer";
 import styled from "styled-components";
+import type { JSX } from "react/jsx-runtime";
 
 interface PageLayoutProps {
   children: JSX.Element;

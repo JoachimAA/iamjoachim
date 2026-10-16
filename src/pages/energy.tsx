@@ -1,8 +1,5 @@
-import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { graphql, HeadFC } from "gatsby";
-import { Generation } from "../../gatsby-node";
 import { format } from "date-fns";
 import Body from "../components/typography/Body";
 import H3 from "../components/typography/H3";
@@ -11,20 +8,16 @@ import { firstLetterUppercase } from "../utils/energy/energy-utils";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const query = graphql`
-  query EnergyGenerationQuery {
-    allEnergyGeneration {
-      nodes {
-        to
-        from
-        generationmix {
-          perc
-          fuel
-        }
-      }
-    }
-  }
-`;
+type Generation = {
+  from: string;
+  to: string;
+  generationmix: GenerationMix[];
+};
+
+type GenerationMix = {
+  fuel: string;
+  perc: number;
+};
 
 interface EnergyProps {
   data: {
@@ -38,12 +31,12 @@ export default function Energy({ data }: EnergyProps) {
   const energyData = data.allEnergyGeneration.nodes[0];
 
   const doughnutData = {
-    labels: energyData.generationmix.map((mix) =>
+    labels: energyData.generationmix.map((mix: GenerationMix) =>
       firstLetterUppercase(mix.fuel)
     ),
     datasets: [
       {
-        data: energyData.generationmix.map((mix) => mix.perc),
+        data: energyData.generationmix.map((mix: GenerationMix) => mix.perc),
         backgroundColor: [
           "rgb(0, 153, 76)",
           "rgb(0, 0, 0)",
@@ -89,8 +82,6 @@ export default function Energy({ data }: EnergyProps) {
     </>
   );
 }
-
-export const Head: HeadFC = () => <title>Energy - Joachim Arthey</title>
 
 const EnergyContainer = styled("div")({
   display: "grid",

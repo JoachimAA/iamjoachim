@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 interface BodyProps {
@@ -9,7 +8,7 @@ export default function Body({ message }: BodyProps) {
   return <BodyRoot>{message}</BodyRoot>;
 }
 
-const BodyRoot = styled("body")({
+const BodyRoot = styled("p")({
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
   margin: "0px",
 });

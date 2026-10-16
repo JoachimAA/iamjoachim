@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { getColumn, getRow } from "./peg-solitaire-utils";
 import PegNode from "./PegNode";
 import { Dialog } from "@mui/material";
 import H3 from "../../typography/H3";
-import Button from "../../Button";
 import Body from "../../typography/Body";
 
 const NUMBER_OF_GAME_BOARD_NODES = 33;
@@ -23,7 +22,7 @@ export default function Nodes() {
 
   const nodesStartState = Array.from({
     length: NUMBER_OF_GAME_BOARD_NODES,
-  }).map((value, idx) => {
+  }).map((_, idx) => {
     const column = getColumn(idx);
     const row = getRow(idx, column);
     return { idx, column, row, empty: idx === 16 ? true : false };

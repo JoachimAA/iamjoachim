@@ -1,4 +1,3 @@
-import React from "react";
 import H3 from "../../typography/H3";
 import Body from "../../typography/Body";
 

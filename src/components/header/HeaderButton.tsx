@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import H3 from "../typography/H3";
-import { navigate } from "gatsby";
+import { useNavigate } from "react-router";
 
 interface HeaderButtonProps {
   message: string;
@@ -9,6 +8,7 @@ interface HeaderButtonProps {
 }
 
 export default function HeaderButton({ message, path }: HeaderButtonProps) {
+  const navigate = useNavigate();
   return (
     <Container
       selected={window.location.href.includes(path)}

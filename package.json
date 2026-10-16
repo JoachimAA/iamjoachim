@@ -1,46 +1,44 @@
 {
-  "homepage": "https://iamjoachim.com",
-  "name": "iamjoachim",
-  "version": "1.0.0",
+  "name": "iamjoachim-vite",
   "private": true,
-  "description": "iamjoachim",
-  "author": "JoachimAA",
-  "keywords": [
-    "gatsby"
-  ],
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "deploy": "gatsby build --prefix-paths && cpy ./src/CNAME public/static/ && gh-pages -d public --cname iamjoachim.com",
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "dev": "vite",
+    "start": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist --cname iamjoachim.com"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@mui/material": "^5.15.17",
-    "axios": "^1.6.8",
-    "babel-plugin-styled-components": "^2.1.4",
-    "chart.js": "^4.4.2",
-    "date-fns": "^3.6.0",
-    "gatsby": "^5.13.3",
-    "gatsby-plugin-manifest": "^5.13.1",
-    "gatsby-plugin-styled-components": "^6.13.1",
-    "react": "^18.2.0",
-    "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.1.0",
-    "styled-components": "^6.1.8"
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^9.5.0",
+    "chart.js": "^4.5.1",
+    "date-fns": "^4.4.0",
+    "react": "^19.2.8",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.2.8",
+    "react-icons": "^5.7.0",
+    "react-router": "^8.4.0",
+    "styled-components": "^6.6.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.19",
-    "@types/react": "^18.2.55",
-    "@types/react-dom": "^18.2.19",
-    "cpy-cli": "^5.0.0",
-    "cross-env": "^7.0.3",
-    "gh-pages": "^6.1.1",
-    "typescript": "^5.3.3"
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^10.10.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.6",
+    "gh-pages": "^6.3.0",
+    "globals": "^17.12.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }

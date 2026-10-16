@@ -1,10 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 import HeaderButton from "./HeaderButton";
 import { BiHome as HomeIcon } from "react-icons/bi";
-import { navigate } from "gatsby";
+import { useNavigate } from "react-router";
 
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <Root>
       <HomeButton onClick={() => navigate("/")}>
