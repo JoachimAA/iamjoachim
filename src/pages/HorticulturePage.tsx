@@ -8,7 +8,7 @@ export default function HorticulturePage() {
     <PageLayout>
       <ContentContainer>
         <H2 message="Horticulture" />
-        <Body message="Welcome to Vite" />
+        <Body message="Welcome to Vite 2" />
       </ContentContainer>
     </PageLayout>
   );

@@ -11,10 +11,10 @@ export default function Header() {
         <HomeIcon color="var(--secondary-color)" size={30} />
       </HomeButton>
       <HeaderButtonsContainer>
-        <HeaderButton message="Peg solitaire" path="/peg-solitaire" />
+        <HeaderButton message="Peg solitaire" path="/peg-solitaire/" />
         {/* <HeaderButton message="Energy" path="/energy" /> */}
-        <HeaderButton message="Horticulture" path="/horticulture" />
-        <HeaderButton message="Model railway" path="/model-railway" />
+        <HeaderButton message="Horticulture" path="/horticulture/" />
+        <HeaderButton message="Model railway" path="/model-railway/" />
       </HeaderButtonsContainer>
     </Root>
   );
