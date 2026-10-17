@@ -10,4 +10,5 @@ export default function H2({ message }: H2Props) {
 
 const H2Root = styled("h2")({
   margin: "0px",
+  color: "var(--primary-color)",
 });

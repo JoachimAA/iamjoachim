@@ -9,6 +9,5 @@ export default function H1({ message }: H1Props) {
 }
 
 const H1Root = styled("h1")({
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
   margin: "0px",
 });

@@ -10,4 +10,5 @@ export default function H3({ message }: H3Props) {
 
 const H3Root = styled("h3")({
   margin: "0px",
+  color: "var(--primary-color)",
 });

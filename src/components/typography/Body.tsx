@@ -9,6 +9,5 @@ export default function Body({ message }: BodyProps) {
 }
 
 const BodyRoot = styled("p")({
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
   margin: "0px",
 });

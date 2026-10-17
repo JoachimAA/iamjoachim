@@ -1,14 +1,50 @@
-import PageLayout from "../components/PageLayout";
-import H2 from "../components/typography/H2";
-import Body from "../components/typography/Body";
+import Header from "../components/header/Header";
+import styled from "styled-components";
+import H3 from "../components/typography/H3";
+import HomeImage from "../assets/photos/Home.jpg";
 
 export default function HomePage() {
   return (
-    <PageLayout>
-      <>
-        <H2 message="I am Joachim Arthey" />
-        <Body message="I am a software devloper based in Northamptonshire. Here you can find some of my personal project that I have worked on in my spare time." />
-      </>
-    </PageLayout>
+    <HomePageContainer>
+      <Header />
+      <TextContainer>
+        <BigText message="Joachim Arthey" />
+        <H3 message="A place for my projects and passions." />
+      </TextContainer>
+    </HomePageContainer>
   );
 }
+
+const TextContainer = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  flexGrow: "1",
+  marginBottom: "100px",
+});
+
+const HomePageContainer = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  minHeight: "100vh",
+  width: "100vw",
+  backgroundImage: `url(${HomeImage})`,
+  backgroundRepeat: "none",
+  backgroundSize: "cover",
+});
+
+interface BigTextProps {
+  message: string;
+}
+
+function BigText({ message }: BigTextProps) {
+  return <BigTextContainer>{message}</BigTextContainer>;
+}
+
+const BigTextContainer = styled("p")({
+  margin: "0px",
+  fontSize: "80px",
+  fontFamily: "var(--font-family-heading)",
+  color: "var(--primary-color)",
+});

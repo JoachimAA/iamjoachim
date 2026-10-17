@@ -9,9 +9,10 @@ interface HeaderButtonProps {
 
 export default function HeaderButton({ message, path }: HeaderButtonProps) {
   const navigate = useNavigate();
+  console.log(window.location.pathname);
   return (
     <Container
-      selected={window.location.href.includes(path)}
+      selected={window.location.pathname === path}
       onClick={() => navigate(path)}
     >
       <H3 message={message} />
@@ -36,23 +37,3 @@ const Container = styled("div")<{ selected: boolean }>`
     };
   `}
 `;
-
-// const Container = styled("div")(({ selected }: ContainerProps) => ({
-//   backgroundColor: selected ? "white" : "transparent",
-//   borderRadius: "10px",
-//   display: "flex",
-//   justifyContent: "center",
-//   alignItems: "center",
-//   height: "40px",
-// }));
-
-// const Container = styled("div", {
-//   shouldForwardProp: (props) => props !== "selected",
-// })(({ selected }: ContainerProps) => ({
-//   backgroundColor: selected ? "white" : "transparent",
-//   borderRadius: "10px",
-//   display: "flex",
-//   justifyContent: "center",
-//   alignItems: "center",
-//   height: "40px",
-// }));
