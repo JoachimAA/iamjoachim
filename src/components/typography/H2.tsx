@@ -9,6 +9,5 @@ export default function H2({ message }: H2Props) {
 }
 
 const H2Root = styled("h2")({
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
   margin: "0px",
 });

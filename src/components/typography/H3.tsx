@@ -9,6 +9,5 @@ export default function H3({ message }: H3Props) {
 }
 
 const H3Root = styled("h3")({
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
   margin: "0px",
 });

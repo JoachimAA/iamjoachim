@@ -1,10 +1,41 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("../assets/fonts/Manrope-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("../assets/fonts/Sora-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --primary-color: #ff8509;
   --secondary-color: #ffffff;
+  --font-family: "Manrope", sans-serif;
+  --font-family-heading: "Sora", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
 }
 
 body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
+  font-family: var(--font-family);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
