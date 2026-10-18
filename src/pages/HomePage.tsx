@@ -21,7 +21,7 @@ const TextContainer = styled("div")({
   justifyContent: "center",
   alignItems: "center",
   flexGrow: "1",
-  marginBottom: "100px",
+  marginBottom: "250px",
 });
 
 const HomePageContainer = styled("div")({
@@ -32,6 +32,7 @@ const HomePageContainer = styled("div")({
   backgroundImage: `url(${HomeImage})`,
   backgroundRepeat: "none",
   backgroundSize: "cover",
+  backgroundPosition: "center",
 });
 
 interface BigTextProps {

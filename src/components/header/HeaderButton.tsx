@@ -9,7 +9,6 @@ interface HeaderButtonProps {
 
 export default function HeaderButton({ message, path }: HeaderButtonProps) {
   const navigate = useNavigate();
-  console.log(window.location.pathname);
   return (
     <Container
       selected={window.location.pathname === path}
@@ -22,18 +21,16 @@ export default function HeaderButton({ message, path }: HeaderButtonProps) {
 
 const Container = styled("div")<{ selected: boolean }>`
   ${(props) => `
-    background-color: ${
-      props.selected ? "var(--secondary-color)" : "transparent"
-    };
-    border-radius: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30px;
     padding: 4px;
     cursor: pointer;
-    color: ${
-      props.selected ? "var(--primary-color)" : "var(--secondary-color)"
-    };
+    text-decoration: ${props.selected ? "underline" : "none"};
+
+    &:hover {
+      text-decoration: underline;
+    }
   `}
 `;

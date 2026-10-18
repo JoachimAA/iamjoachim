@@ -28,7 +28,5 @@ const Layout = styled("div")({
 
 const ContentContainer = styled("div")({
   flexGrow: "1",
-  padding: "24px 16px",
-  maxWidth: "600px",
-  margin: "auto",
+  margin: "0 32px",
 });
