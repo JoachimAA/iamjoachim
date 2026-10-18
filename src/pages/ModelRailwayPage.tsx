@@ -1,12 +1,72 @@
 import styled from "styled-components";
 import H2 from "../components/typography/H2";
 import PageLayout from "../components/PageLayout";
+import ImageCarousel, {
+  type CarouselImage,
+} from "../components/image-carousel/ImageCarousel";
+import Body from "../components/typography/Body";
+import H3 from "../components/typography/H3";
+
+import image1 from "../assets/photos/model-railway/model-railway-1.webp";
+import image2 from "../assets/photos/model-railway/model-railway-2.webp";
+import image3 from "../assets/photos/model-railway/model-railway-3.webp";
+import image4 from "../assets/photos/model-railway/model-railway-4.webp";
+import image5 from "../assets/photos/model-railway/model-railway-5.webp";
+import image6 from "../assets/photos/model-railway/model-railway-6.webp";
+import image7 from "../assets/photos/model-railway/model-railway-7.webp";
+import image8 from "../assets/photos/model-railway/model-railway-8.webp";
+import image9 from "../assets/photos/model-railway/model-railway-9.webp";
+import image10 from "../assets/photos/model-railway/model-railway-10.webp";
+import image11 from "../assets/photos/model-railway/model-railway-11.webp";
+import image12 from "../assets/photos/model-railway/model-railway-12.webp";
+import image13 from "../assets/photos/model-railway/model-railway-13.webp";
+import image14 from "../assets/photos/model-railway/model-railway-14.webp";
+
+const modelRailwayImages: CarouselImage[] = [
+  { src: image1, alt: "1" },
+  { src: image2, alt: "2" },
+  { src: image3, alt: "3" },
+  { src: image4, alt: "4" },
+  { src: image5, alt: "5" },
+  { src: image6, alt: "6" },
+  { src: image7, alt: "7" },
+  { src: image8, alt: "8" },
+  { src: image9, alt: "9" },
+  { src: image10, alt: "10" },
+  { src: image11, alt: "11" },
+  { src: image12, alt: "12" },
+  { src: image13, alt: "13" },
+  { src: image14, alt: "14" },
+];
 
 export default function ModelRailwayPage() {
   return (
     <PageLayout>
       <ContentContainer>
         <H2 message="Model railway" />
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "16px",
+            rowGap: "32px",
+          }}
+        >
+          <div
+            style={{
+              padding: "8px 0px",
+              gap: "8px",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <H3 message="Model railway" />
+            <Body message="Description" />
+          </div>
+          <div>
+            <ImageCarousel images={modelRailwayImages} />
+          </div>
+        </div>
       </ContentContainer>
     </PageLayout>
   );

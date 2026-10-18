@@ -9,7 +9,7 @@ export default function Header() {
       <HeaderButton message="Peg solitaire" path="/peg-solitaire/" />
       <span>•</span>
       {/* <HeaderButton message="Energy" path="/energy" /> */}
-      <HeaderButton message="Horticulture" path="/horticulture/" />
+      <HeaderButton message="Garden" path="/garden/" />
       <span>•</span>
       <HeaderButton message="Model railway" path="/model-railway/" />
     </Root>

@@ -1,6 +1,6 @@
 import { mkdirSync, copyFileSync } from "node:fs";
 
-const routes = ["peg-solitaire", "horticulture", "model-railway"];
+const routes = ["peg-solitaire", "garden", "model-railway"];
 
 for (const route of routes) {
   const routeDir = `dist/${route}`;

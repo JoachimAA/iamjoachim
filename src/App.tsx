@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 
 import HomePage from "./pages/HomePage";
 import PegSolitairePage from "./pages/PegSolitairePage";
-import HorticulturePage from "./pages/HorticulturePage";
+import GardenPage from "./pages/garden/GardenPage";
 import ModelRailwayPage from "./pages/ModelRailwayPage";
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/peg-solitaire/" element={<PegSolitairePage />} />
-        <Route path="/horticulture/" element={<HorticulturePage />} />
+        <Route path="/garden/" element={<GardenPage />} />
         <Route path="/model-railway/" element={<ModelRailwayPage />} />
       </Routes>
     </BrowserRouter>
