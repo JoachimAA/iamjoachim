@@ -1,8 +1,4 @@
-import ImageCarousel, {
-  type CarouselImage,
-} from "../../components/image-carousel/ImageCarousel";
-import Body from "../../components/typography/Body";
-import H3 from "../../components/typography/H3";
+import { type CarouselImage } from "../../components/image-carousel/ImageCarousel";
 
 import image1 from "../../assets/photos/front-border/front-border-1.webp";
 import image2 from "../../assets/photos/front-border/front-border-2.webp";
@@ -17,40 +13,67 @@ import image10 from "../../assets/photos/front-border/front-border-10.webp";
 import image11 from "../../assets/photos/front-border/front-border-11.webp";
 import image12 from "../../assets/photos/front-border/front-border-12.webp";
 import image13 from "../../assets/photos/front-border/front-border-13.webp";
+import ProjectLayout from "../../components/project-layout/ProjectLayout";
 
 const frontBorderImages: CarouselImage[] = [
-  { src: image1, alt: "1" },
-  { src: image2, alt: "2" },
-  { src: image3, alt: "3" },
-  { src: image4, alt: "4" },
-  { src: image5, alt: "5" },
-  { src: image6, alt: "6" },
-  { src: image7, alt: "7" },
-  { src: image8, alt: "8" },
-  { src: image9, alt: "9" },
-  { src: image10, alt: "10" },
-  { src: image11, alt: "11" },
-  { src: image12, alt: "12" },
-  { src: image13, alt: "13" },
+  { src: image1, alt: "1", caption: "Before work started" },
+  {
+    src: image2,
+    alt: "2",
+    caption:
+      "Painting the sleepers with bitumen paint to help protect the wood from moisture and extend its lifespan.",
+  },
+  {
+    src: image3,
+    alt: "3",
+    caption: "Laying a string to get an idea of size for the border",
+  },
+  {
+    src: image4,
+    alt: "4",
+    caption: "Digging out the grass ready for the new border",
+  },
+  {
+    src: image5,
+    alt: "5",
+    caption: "Fibre optic cable that needed being careful of",
+  },
+  {
+    src: image6,
+    alt: "6",
+    caption: "Laying gravel ready for the sleepers to sit on and for drainage",
+  },
+  {
+    src: image7,
+    alt: "7",
+    caption: "Laying sheeting to protect the sleepers from moisture",
+  },
+  {
+    src: image8,
+    alt: "8",
+    caption: "Drilling in the stakes that will hold the sleepers in place",
+  },
+  {
+    src: image9,
+    alt: "9",
+    caption: "Backfilling the sleepers with gravel to assist with drainage",
+  },
+  {
+    src: image10,
+    alt: "10",
+    caption: "Filling in with soil ready for planting",
+  },
+  { src: image11, alt: "11", caption: "Arranging plants ready for planting" },
+  { src: image12, alt: "12", caption: "Arranging plants ready for planting" },
+  { src: image13, alt: "13", caption: "The finished front border!" },
 ];
 
 export default function FrontBorderProject() {
   return (
-    <>
-      <div
-        style={{
-          padding: "8px 0px",
-          gap: "8px",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <H3 message="Front border" />
-        <Body message="Description" />
-      </div>
-      <div>
-        <ImageCarousel images={frontBorderImages} />
-      </div>
-    </>
+    <ProjectLayout
+      title="Front border"
+      images={frontBorderImages}
+      description="This project was all about tidying up the front border along the path and road outside my house. Due to the small slope down towards the path, I decided to use some large sleepers to create a small wall between the grass and path, while also creating a border for some plants. This was my first time using sleepers in a project, so it was something new and exciting to try. It was a bit challenging as I had to be careful not to disturb the fibre optic line that ran from the path up the lawn to the house. The biggest challenge was getting the sleepers aligned properly with each other, but the final outcome looked amazing and created a really nice front border."
+    />
   );
 }

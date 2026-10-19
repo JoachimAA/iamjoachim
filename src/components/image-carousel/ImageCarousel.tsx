@@ -6,6 +6,7 @@ import styled from "styled-components";
 export type CarouselImage = {
   src: string;
   alt: string;
+  caption?: string;
 };
 
 type ImageCarouselProps = {
@@ -60,6 +61,8 @@ export default function ImageCarousel({ images, options }: ImageCarouselProps) {
           {images.map((image, index) => (
             <MainSlide key={`${image.src}-${index}`}>
               <img src={image.src} alt={image.alt} />
+
+              {image.caption && <Caption>{image.caption}</Caption>}
             </MainSlide>
           ))}
         </MainSlides>
@@ -108,6 +111,7 @@ const MainSlides = styled("div")({
 });
 
 const MainSlide = styled("div")({
+  position: "relative",
   flex: "0 0 100%",
   minWidth: "0",
 
@@ -170,3 +174,15 @@ const ThumbButton = styled("button")<{ $selected: boolean }>(
     },
   })
 );
+
+const Caption = styled("div")({
+  position: "absolute",
+  bottom: "0",
+  left: "0",
+  width: "100%",
+  padding: "8px 12px",
+  boxSizing: "border-box",
+  background: "rgba(0, 0, 0, 0.55)",
+  color: "#fff",
+  fontSize: "12px",
+});

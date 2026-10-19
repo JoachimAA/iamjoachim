@@ -1,4 +1,6 @@
-import ImageCarousel from "../../components/image-carousel/ImageCarousel";
+import ImageCarousel, {
+  type CarouselImage,
+} from "../../components/image-carousel/ImageCarousel";
 import Body from "../../components/typography/Body";
 import H3 from "../../components/typography/H3";
 
@@ -18,43 +20,50 @@ import image13 from "../../assets/photos/landscaping-steps/landscaping-steps-13.
 import image14 from "../../assets/photos/landscaping-steps/landscaping-steps-14.webp";
 import image15 from "../../assets/photos/landscaping-steps/landscaping-steps-15.webp";
 import image16 from "../../assets/photos/landscaping-steps/landscaping-steps-16.webp";
+import ProjectLayout from "../../components/project-layout/ProjectLayout";
 
 const landscapingImages: CarouselImage[] = [
-  { src: image1, alt: "1" },
-  { src: image2, alt: "2" },
-  { src: image3, alt: "3" },
-  { src: image4, alt: "4" },
-  { src: image5, alt: "5" },
-  { src: image6, alt: "6" },
-  { src: image7, alt: "7" },
-  { src: image8, alt: "8" },
-  { src: image9, alt: "9" },
-  { src: image10, alt: "10" },
-  { src: image11, alt: "11" },
-  { src: image12, alt: "12" },
-  { src: image13, alt: "13" },
-  { src: image14, alt: "14" },
-  { src: image15, alt: "15" },
-  { src: image16, alt: "16" },
+  { src: image1, alt: "1", caption: "Before work started" },
+  {
+    src: image2,
+    alt: "2",
+    caption: "Measuring out lengths to string out the steps outline",
+  },
+  { src: image3, alt: "3", caption: "The plan strung out really to begin!" },
+  { src: image4, alt: "4", caption: "Getting started on the first step" },
+  { src: image5, alt: "5", caption: "Making sure its all level" },
+  { src: image6, alt: "6", caption: "Pinning in the first step" },
+  {
+    src: image7,
+    alt: "7",
+    caption: "Cutting up the wood planks into lengths with the mitre saw",
+  },
+  { src: image8, alt: "8", caption: "Progress with the 2nd step going in" },
+  {
+    src: image9,
+    alt: "9",
+    caption:
+      "Applying cut end preserver to help protect the exposed ends of the timber from moisture and rot.",
+  },
+  // { src: image10, alt: "10" },
+  {
+    src: image11,
+    alt: "11",
+    caption: "All the steps in place with the sub-base laid",
+  },
+  { src: image12, alt: "12", caption: "Heathers planted around the edge" },
+  { src: image13, alt: "13", caption: "Laying out the gravel on top" },
+  { src: image14, alt: "14", caption: "The steps all finished!" },
+  // { src: image15, alt: "15" },
+  // { src: image16, alt: "16" },
 ];
 
 export default function LandscapingStepsProject() {
   return (
-    <>
-      <div
-        style={{
-          padding: "8px 0px",
-          gap: "8px",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <H3 message="Landscaping steps" />
-        <Body message="This project was all about refurbing the entrance to the house. Before, it just consisted of some slate and big slabs on the floor, but I wanted to create some landscaped steps that sat nicely into the slope of the front garden. I came up with a plan and worked out the dimensions before getting started. Here you can see how the project progressed over the weekend, from beginning to end, transforming the entrance into some beautiful steps built into the garden, finished off with a nice border which I decided to plant some heather in." />
-      </div>
-      <div>
-        <ImageCarousel images={landscapingImages} />
-      </div>
-    </>
+    <ProjectLayout
+      title="Landscaping steps"
+      description="This project was all about refurbing the entrance to the house. Before, it just consisted of some slate and big slabs on the floor, but I wanted to create some landscaped steps that sat nicely into the slope of the front garden. I came up with a plan and worked out the dimensions before getting started. Here you can see how the project progressed over the weekend, from beginning to end, transforming the entrance into some beautiful steps built into the garden, finished off with a nice border which I decided to plant some heather in."
+      images={landscapingImages}
+    />
   );
 }

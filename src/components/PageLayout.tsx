@@ -28,5 +28,5 @@ const Layout = styled("div")({
 
 const ContentContainer = styled("div")({
   flexGrow: "1",
-  margin: "0 32px",
+  margin: "64px 256px",
 });

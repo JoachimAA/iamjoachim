@@ -23,20 +23,49 @@ import image13 from "../assets/photos/model-railway/model-railway-13.webp";
 import image14 from "../assets/photos/model-railway/model-railway-14.webp";
 
 const modelRailwayImages: CarouselImage[] = [
-  { src: image1, alt: "1" },
-  { src: image2, alt: "2" },
-  { src: image3, alt: "3" },
-  { src: image4, alt: "4" },
-  { src: image5, alt: "5" },
-  { src: image6, alt: "6" },
-  { src: image7, alt: "7" },
-  { src: image8, alt: "8" },
-  { src: image9, alt: "9" },
-  { src: image10, alt: "10" },
-  { src: image11, alt: "11" },
-  { src: image12, alt: "12" },
-  { src: image13, alt: "13" },
-  { src: image14, alt: "14" },
+  {
+    src: image1,
+    alt: "1",
+    caption:
+      "Starting on the plywood base board and strips of timber for strength",
+  },
+  { src: image2, alt: "2", caption: "Gluing and nailing the wood on" },
+  { src: image3, alt: "3", caption: "Constructing the track" },
+  { src: image4, alt: "4", caption: "Constructing the track" },
+  {
+    src: image5,
+    alt: "5",
+    caption: "Gluing cork down to go underneath the track",
+  },
+  // {
+  //   src: image6,
+  //   alt: "6",
+  //   caption: "Cutting lengths of cork to go underneath the track",
+  // },
+  {
+    src: image7,
+    alt: "7",
+    caption: "Cutting lengths of cork to go underneath the track",
+  },
+  {
+    src: image8,
+    alt: "8",
+    caption: "Track all laid on top of the cork underlay",
+  },
+  { src: image9, alt: "9", caption: "Spray painting the track" },
+  { src: image10, alt: "10", caption: "Track all spray painted" },
+  { src: image11, alt: "11", caption: "Painting the rest of the board brown" },
+  { src: image12, alt: "12", caption: "Starting to lay the ballast" },
+  {
+    src: image13,
+    alt: "13",
+    caption: "First bit of ballast laid and stuck down",
+  },
+  {
+    src: image14,
+    alt: "14",
+    caption: "Welsh Pony on the line next to my scratch built platform",
+  },
 ];
 
 export default function ModelRailwayPage() {
