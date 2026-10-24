@@ -2,6 +2,7 @@ import Header from "./header/Header";
 import Footer from "./Footer";
 import styled from "styled-components";
 import type { JSX } from "react/jsx-runtime";
+import { breakpoints } from "../styles/breakpoints";
 
 interface PageLayoutProps {
   children: JSX.Element;
@@ -27,6 +28,18 @@ const Layout = styled("div")({
 });
 
 const ContentContainer = styled("div")({
-  flexGrow: "1",
+  flexGrow: 1,
   margin: "64px 256px",
+
+  [`@media (max-width: ${breakpoints.large}px)`]: {
+    margin: "64px 128px",
+  },
+
+  [`@media (max-width: ${breakpoints.medium}px)`]: {
+    margin: "64px",
+  },
+
+  [`@media (max-width: ${breakpoints.large}px)`]: {
+    margin: "32px 16px",
+  },
 });
