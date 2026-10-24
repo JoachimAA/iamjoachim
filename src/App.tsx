@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import HomePage from "./pages/HomePage";
 import PegSolitairePage from "./pages/PegSolitairePage";
 import GardenPage from "./pages/garden/GardenPage";
-import ModelRailwayPage from "./pages/ModelRailwayPage";
+import ModelRailwayPage from "./pages/model-railway/ModelRailwayPage";
 
 export default function App() {
   return (

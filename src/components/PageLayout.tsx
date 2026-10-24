@@ -29,11 +29,7 @@ const Layout = styled("div")({
 
 const ContentContainer = styled("div")({
   flexGrow: 1,
-  margin: "64px 256px",
-
-  [`@media (max-width: ${breakpoints.large}px)`]: {
-    margin: "64px 128px",
-  },
+  margin: "64px 128px",
 
   [`@media (max-width: ${breakpoints.medium}px)`]: {
     margin: "64px",
