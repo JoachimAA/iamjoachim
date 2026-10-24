@@ -33,41 +33,37 @@ export default function ProjectLayout({
 const ProjectContainer = styled("article")({
   display: "grid",
   gridTemplateColumns: "minmax(0, 3fr) minmax(0, 2fr)",
+  gridTemplateAreas: '"text carousel"',
   gap: "16px",
   alignItems: "center",
   minWidth: 0,
 
-  // align text right for right side text
-  "&:nth-child(even) > div:first-child": {
-    textAlign: "right",
-  },
-
   "&:nth-child(even)": {
     gridTemplateColumns: "minmax(0, 2fr) minmax(0, 3fr)",
+    gridTemplateAreas: '"carousel text"',
 
     "& > div:first-child": {
-      order: 2,
-    },
-
-    "& > div:last-child": {
-      order: 1,
+      textAlign: "right",
     },
   },
 
   "@media (max-width: 767px)": {
     gridTemplateColumns: "minmax(0, 1fr)",
+    gridTemplateAreas: '"text" "carousel"',
 
     "&:nth-child(even)": {
       gridTemplateColumns: "minmax(0, 1fr)",
-    },
+      gridTemplateAreas: '"text" "carousel"',
 
-    "& > div:first-child, & > div:last-child": {
-      order: "unset",
+      "& > div:first-child": {
+        textAlign: "left",
+      },
     },
   },
 });
 
 const TextContainer = styled("div")({
+  gridArea: "text",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -76,5 +72,6 @@ const TextContainer = styled("div")({
 });
 
 const CarouselContainer = styled("div")({
+  gridArea: "carousel",
   minWidth: 0,
 });

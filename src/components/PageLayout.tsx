@@ -39,7 +39,7 @@ const ContentContainer = styled("div")({
     margin: "64px",
   },
 
-  [`@media (max-width: ${breakpoints.large}px)`]: {
+  [`@media (max-width: ${breakpoints.small}px)`]: {
     margin: "32px 16px",
   },
 });
