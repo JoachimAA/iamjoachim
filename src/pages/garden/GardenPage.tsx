@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PageLayout from "../../components/PageLayout";
+import PageLayout from "../../components/layout/PageLayout";
 import LandscapingStepsProject from "./LandscapingStepsProject";
 import GrassProject from "./GrassProject";
 import FrontBorderProject from "./FrontBorderProject";

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PageLayout from "../../components/PageLayout";
+import PageLayout from "../../components/layout/PageLayout";
 import ModelRailwayProject from "./ModelRailwayProject";
 
 export default function ModelRailwayPage() {

@@ -1,8 +1,8 @@
-import Header from "./header/Header";
-import Footer from "./Footer";
+import Header from "../header/Header";
+import Footer from "../Footer";
 import styled from "styled-components";
 import type { JSX } from "react/jsx-runtime";
-import { breakpoints } from "../styles/breakpoints";
+import { breakpoints } from "../../styles/breakpoints";
 
 interface PageLayoutProps {
   children: JSX.Element;

@@ -1,21 +1,10 @@
-import styled from "styled-components";
 import PegSolitaire from "../components/games/peg-solitaire/PegSolitaire";
-import PageLayout from "../components/PageLayout";
+import FullScreenPageLayout from "../components/layout/FullscreenPageLayout";
 
 export default function PegSolitairePage() {
   return (
-    <PageLayout>
-      <ContentContainer>
-        <PegSolitaire />
-      </ContentContainer>
-    </PageLayout>
+    <FullScreenPageLayout>
+      <PegSolitaire />
+    </FullScreenPageLayout>
   );
 }
-
-const ContentContainer = styled("div")({
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "column",
-  alignItems: "center",
-  gap: "24px",
-});
