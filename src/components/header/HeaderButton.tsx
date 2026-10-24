@@ -9,6 +9,7 @@ interface HeaderButtonProps {
 
 export default function HeaderButton({ message, path }: HeaderButtonProps) {
   const navigate = useNavigate();
+
   return (
     <Container
       selected={window.location.pathname === path}
@@ -20,17 +21,34 @@ export default function HeaderButton({ message, path }: HeaderButtonProps) {
 }
 
 const Container = styled("div")<{ selected: boolean }>`
-  ${(props) => `
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    padding: 4px;
-    cursor: pointer;
-    text-decoration: ${props.selected ? "underline" : "none"};
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  padding: 4px;
+  cursor: pointer;
 
-    &:hover {
-      text-decoration: underline;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: calc(100% - 8px);
+    height: 2px;
+    background-color: currentColor;
+    transform: translateX(-50%) scaleX(${(props) => (props.selected ? 1 : 0)});
+    transform-origin: center;
+    transition: transform 200ms ease;
+  }
+
+  &:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::after {
+      transition: none;
     }
-  `}
+  }
 `;
