@@ -1,5 +1,5 @@
-import Body from "@/components/typography/Body";
-import H3 from "@/components/typography/H3";
+import H3 from "../../typography/H3";
+import Body from "../../typography/Body";
 
 export default function Instructions() {
   return (
